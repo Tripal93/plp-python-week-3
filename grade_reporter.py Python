@@ -1,0 +1,39 @@
+scores = [72, 45, 90, 61, 38]
+
+passed_count = 0
+failed_count = 0
+total_score = 0
+
+for score in scores:
+    if score >= 80:
+        grade = "A"
+    elif score >= 70:
+        grade = "B"
+    elif score >= 50:
+        grade = "C"
+    else:
+        grade = "F"
+
+    print(f"Score: {score} - Grade: {grade}")
+
+    if score >= 50:
+        passed_count += 1
+    else:
+        failed_count += 1
+
+    total_score += score
+
+average = total_score / len(scores)
+
+print(f"Passed: {passed_count}")
+print(f"Failed: {failed_count}")
+print(f"Average: {round(average, 1)}")count = 1
+total = 0
+
+# BUG: The while loop was missing a colon at the end of the header and used < 5 instead of <= 5, causing a SyntaxError and skipping 5; fixed by adding a colon and changing the condition to count <= 5.
+while count <= 5:
+    total = total + count
+    count = count + 1
+
+# BUG: Concatenating a string with an integer (total) raises a TypeError; fixed by converting total to a string with str(total).
+print("Sum of 1 to 5 is: " + str(total))
